@@ -1,29 +1,24 @@
-#include <stdio.h>
+#include<stdio.h>
 int main()
 {
-  int array[100], search, c, n;
+    int arr[10],index, ans=-1;
+    printf("Enter matrix");
+    for(int i=0; i<10; i++)
+        scanf("%d",&arr[i]);
+        printf("Which elemnt you want to search\n");
+        scanf("%d",&index);
+        for(int i=0;i<10;i++){
+            if(index==arr[i])
+                ans=i;
+                break;
+            }
+            if(index>=0){
+                printf("Element is present at index= %d",index);
 
-  printf("Enter number of elements in array\n");
-  scanf("%d", &n);
+            }
+            else
+            printf("Elemnt  does not exist");
+            return 0;
 
-  printf("Enter %d integer(s)\n", n);
-
-  for (c = 0; c < n; c++)
-    scanf("%d", &array[c]);
-
-  printf("Enter a number to search\n");
-  scanf("%d", &search);
-
-  for (c = 0; c < n; c++)
-  {
-    if (array[c] == search)    /* If required element is found */
-    {
-      printf("%d is present at location %d.\n", search, c+1);
-      break;
-    }
-  }
-  if (c == n)
-    printf("%d isn't present in the array.\n", search);
-
-  return 0;
+    
 }
